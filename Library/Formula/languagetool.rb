@@ -18,4 +18,8 @@ class Languagetool < Formula
     (bin+"languagetool-server").write server_script(libexec/"languagetool-server.jar")
     bin.write_jar_script libexec/"languagetool.jar", "languagetool-gui"
   end
+
+  test do
+    system "echo 'This is a test.' | languagetool -l en-US -"
+  end
 end
